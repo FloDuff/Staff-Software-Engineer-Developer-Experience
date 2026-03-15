@@ -30,5 +30,5 @@ task = "shell.exec"
 args = "python3 main.py && python3 -m unittest discover tests -v"
 
 [deployment]
-run = ["sh", "-c", "python main.py"]
-deploymentTarget = "cloudrun"
+run = ["python3", "main.py"]
+deploymentTarget = "vm"
