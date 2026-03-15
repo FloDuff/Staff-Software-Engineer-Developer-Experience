@@ -27,6 +27,6 @@ To avoid "magic strings" and potential typos in downstream systems, this impleme
 ### Project Structure
 ```text
 ├── main.py              # Logic and Enum definitions
-│── test/
+│── tests/
 │  |── test_sort.py     # Comprehensive unit tests
 └── README.md            # Technical documentation
