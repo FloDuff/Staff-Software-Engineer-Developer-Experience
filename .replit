@@ -1,5 +1,29 @@
-run = "python main.py && python -m unittest discover tests"
-entrypoint = "main.py"
+modules = ["python-3.12"]
+[agent]
+expertMode = true
 
-[modules]
-python3 = "python3"
+[nix]
+channel = "stable-25_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 test.py -v"
+
+[workflows.workflow.metadata]
+outputType = "console"
